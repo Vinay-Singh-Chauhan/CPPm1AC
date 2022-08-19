@@ -59,52 +59,37 @@ int getlength(node* &head){
     return count;
 }
 bool checkintersect(node* &head1,node* &head2){
-    // node* temp1=head1;
-    // node* temp2=head2;
+    node* temp;
+    node* temp1;
+    int k;
     int l1=getlength(head1);
     int l2=getlength(head2);
     int count=1;
-    if(l1>l2){
-        int k=l1-l2;
-        node* temp=head1;
-        node* temp1=head2;
-        while(count<=k){
-            temp=temp->next;
-            count++;
-        }
-        // count=k;
-        while(temp!=temp1&&temp->next!=NULL){
-            temp=temp->next;
-            temp1=temp1->next;
-            count++;
-        }
-        if(temp==NULL){
-            return false;
-        }
-        cout<<"INTERSECTION AT :"<<count<<endl;
-        return true;
-    }
+    if(l1>=l2){
+        k=l1-l2;
+        temp=head1;
+        temp1=head2;}
     else{
-        int k=l2-l1;
-        node* temp=head2;
-        node* temp1=head1;
-        while(count<=k){
+        k=l2-l1;
+        temp=head2;
+        temp1=head1;
+    }
+        while(count<k){
             temp=temp->next;
             count++;
         }
-        count=k;
         while(temp!=temp1&&temp->next!=NULL){
             temp=temp->next;
             temp1=temp1->next;
             count++;
         }
-        if(temp==NULL){
+        if(temp->next==NULL){
+            cout<<"No Intersection Found"<<endl;
             return false;
         }
-        cout<<"INTERSECTION AT :"<<count<<endl;
+        cout<<"INTERSECTION AT POSITION : "<<count<<endl;
         return true;
     }
-}
 int main(){
     node* head1=NULL;
     atend(head1,1);
@@ -119,7 +104,7 @@ int main(){
     atend(head2,10);
     // atend(head2,4);
     display(head2);
-    // intersect(head1,head2,3);
+    intersect(head1,head2,3);
     display(head2);
     cout<<checkintersect(head1,head2);
 }

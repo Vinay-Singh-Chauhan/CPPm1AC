@@ -29,8 +29,8 @@ int hexatodec( string hex){
     int n=hex.size();
     int x=1;
     for(int i=n-1;i>=0;i--){
-        if(hex[i]>'0'&&hex[i]<='9'){
-            ans+=x;
+        if(hex[i]>='0'&&hex[i]<='9'){
+            ans+=(hex[i]-48)*x;
         }
         else{
             ans+=(hex[i] - 'A'+10)*x;

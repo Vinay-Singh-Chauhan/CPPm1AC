@@ -9,21 +9,30 @@ int main(){
     }
     int mid=n/2;
     int start=0;
-    int end=n;
+    int end=n-1;
     int key;
+    // int mid;
     cin>>key;
-    while(arr[mid]!=key){
-        if(arr[mid]>key){
-            end=mid;
-            mid=(start+end)/2;
+    // while(arr[mid]!=key){
+    while(start<end){
+        if(arr[mid]==key){
+            cout<<"@"<<mid<<endl;
+            break;
         }
-        else{
-            start=mid;
-            mid=(start+end)/2;
+        else if(arr[mid]>key){
+            end=mid;
+            // mid=(start+end)/2;
+        }
+        else if(arr[mid]<key){
+            start=mid+1;
+            // mid=(start+end)/2;
         } 
+        mid=(start+end)/2;
+
     }
     if(arr[mid]==key){
-        cout<<mid;
+        // cout<<mid;
+        ;
     }else{
         cout<<-1;
     }
