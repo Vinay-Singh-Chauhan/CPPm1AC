@@ -1,0 +1,8 @@
+1 possible bsts
+2 paranthesis / bracket combination 
+3 possible forests
+4 ways of triangulations
+5 possible paths in matrix
+6 dividing a circle using N chords
+7 dyck words of given length 
+....much more.....
