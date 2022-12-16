@@ -50,33 +50,39 @@ class que{
         void push(int a){
             stack.push(a);
         }
-        void pop(){
+        int pop(){
             if(stack.empty()){
                 cout<<"Queue Underflow"<<endl;
-                return ;
+                return -1;
             }
             int elem=stack.top();
             stack.pop();
             if(stack.empty()){
-                cout<<"popped";
+                // cout<<"popped"<<endl;
+                return elem;
             }
-            pop();
+            int item= pop();
             push(elem);
+            return item;
             
         }
         void top(){
-            if(stack.empty()){
-                cout<<"Queue Underflow"<<endl;
-                return ;
+             if(stack.empty()){
+                return;
             }
+            // while(!stack.empty()){
+
+            // }
             int elem=stack.top();
             stack.pop();
             if(stack.empty()){
-                cout<<elem;
+                cout<< elem<<endl;
+                // return;
             }
-            pop();
+            top();
+            // int item= top();
             push(elem);
-            
+            // return item;
         }
         bool isEmpty(){
             if(stack.empty()){
@@ -87,5 +93,20 @@ class que{
 };
 
 int main(){
-    
-}
+    que a;
+    a.push(1);
+    a.push(2);
+    a.push(3);
+    a.push(4);
+    a.push(5);
+    a.top();
+    a.top();
+    a.top();
+    a.top();
+
+    cout<<a.pop();
+    cout<<a.pop();
+    // cout<<a.pop();
+
+    a.top();
+    }

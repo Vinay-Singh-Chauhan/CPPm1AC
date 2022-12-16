@@ -1,0 +1,3 @@
+if(stack.empty()){
+                return;
+            }

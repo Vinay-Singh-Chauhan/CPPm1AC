@@ -35,7 +35,7 @@ string infixToPostfix( string expression ){
     string ans="";
     stack<char>stack;
     for(int i=0;i<expression.length();i++){
-        if((expression[i]>='a'&&expression[i]<='z')||(expression[i]>='A'&&expression[i]<='Z')){
+        if((expression[i]>='a'&&expression[i]<='z')||(expression[i]>='A'&&expression[i]<='Z')||(expression[i]>='0'&&expression[i]<='9')){
             ans+=expression[i];
         }else{
             switch (expression[i])
@@ -48,11 +48,11 @@ string infixToPostfix( string expression ){
                 ans+=stack.top();
                 stack.pop();
             }
-            if(!stack.empty())
+            // if(!stack.empty())
             stack.pop();
             break;
         default:
-            while (!stack.empty()&&(precedence(stack.top())>precedence(expression[i])) )
+            while (!stack.empty()&&(precedence(stack.top())>=precedence(expression[i])) )
             {
                 ans+=stack.top();
                 stack.pop();
@@ -115,6 +115,6 @@ string infixToPrefix( string expression ){
 int main()
 {   
     stack<int>stack;
-    cout<<infixToPrefix("(a-b/c)*(a/k-l)");
+    cout<<infixToPostfix("a+b*(c^d-e)^(f+g*h)-i");
     return 0;
 }

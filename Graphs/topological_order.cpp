@@ -4,20 +4,20 @@ int main()
 {
     int nodes,edges;
     cin>>nodes>>edges;
-    map<int,int>degree;
+    map<int,int>indegree;
     vector<int> adjList[nodes+1];
     for(int i=0;i<edges;i++){
         int x,y;
         cin>>x>>y;
         adjList[x].push_back(y);
-        degree[y]++;
+        indegree[y]++;
     }
     
 
 
     queue<int>topological_order;
     for(int i=0;i<nodes;i++){
-        if(degree[i]==0){
+        if(indegree[i]==0){
             topological_order.push(i);
         }
     }
@@ -26,8 +26,8 @@ int main()
         topological_order.pop();
         cout<<n<<" ";
         for(auto it:adjList[n]){
-            degree[it]--;
-            if(degree[it]==0){
+            indegree[it]--;
+            if(indegree[it]==0){
                 topological_order.push(it);
             } 
         }

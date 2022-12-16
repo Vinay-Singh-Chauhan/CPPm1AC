@@ -62,7 +62,7 @@ void quicksort(int arr[],int start ,int end){
     return;
 }
 int main(){
-    int arr[5]={1,7,5,2,6};
+    int arr[]={1,7,5,2,6};
     quicksort(arr,0,4);//end should be the index of last element i.e. n-1;
     for(int i=0;i<5;i++){
         cout<<arr[i];
