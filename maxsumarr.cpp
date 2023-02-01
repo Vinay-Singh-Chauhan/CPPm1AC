@@ -6,10 +6,10 @@ using namespace std;
         int currsum=0;
         for(int i=0;i<n;i++){
             currsum+=a[i];
+            sum=max(currsum,sum);
             if(currsum<0){
                 currsum=0;
             }
-            sum=max(currsum,sum);
         }
         return sum;
     }

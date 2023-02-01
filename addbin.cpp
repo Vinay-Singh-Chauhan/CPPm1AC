@@ -44,6 +44,9 @@ int addbinary(int a,int b){
 }
 int main(){
     cout<<"enter two bianry numbers:\t";
+    int a,b,c,d;
+    a,b=1,2;
+    a=b=c=d=1;
     int first,second;
     // cin>>first>>second;
     first=10;
