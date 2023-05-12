@@ -1,0 +1,17 @@
+#1 : Ordered Set
+    based on red-black trees
+    included in:
+            #include<ext/pb_ds/assoc_container.hpp>
+            #include<ext/pb_ds/tree_policy.hpp>
+            using namespace __gnu_pbds;
+    over ordinary set, 
+        ordered set has random access kth element (find_by_order) with O(logn)
+        number strictly less than k(order of l) with O(logn)
+
+        template<class T> using oset = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+
+        template so that we can it make for int ,long char , or any other ,
+        null_type == 'mapped' used for map but here we are making a set;
+        less === sorted in ascending ..for set it is less and for multiset less_equal
+        rb_tree_tag== type of tree used
+        

@@ -1,0 +1,14 @@
+it states that if p is a prime number for any integer a, the number aPOWERp - a is an integer multiple of p.
+i.e. aPOWERp==a(mod p)
+if a is not divisible by p, Fermat's little theorem is equivalent to the statement that (aPOWER(p-1) - 1) is an integer multiple of prime
+i.e. (aPOWER(p-1) - 1)==1(mod p)
+
+
+used to get modulo inverse with the use of binary exponentiation and fermat little theorem;
+
+
+Wilson theorem
+a positive integer n>1 is a prime if and only if 
+(n-1)!  == -1 mod n 
+or
+(n-1)!  == n-1 mod n
